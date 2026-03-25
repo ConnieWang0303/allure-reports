@@ -1,0 +1,12 @@
+[32mINFO    [0m fixtures.esp32_driver.transport:transport.py:43 Request: GET http://172.16.31.29:8088/fitlist | Params: {'ip': '192.168.5.135', 'token': '20260324_163911'} | Body: {}
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:289 Resetting dropped connection: 172.16.31.29
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:544 http://172.16.31.29:8088 "GET /fitlist?ip=192.168.5.135&token=20260324_163911 HTTP/1.1" 200 2
+[32mINFO    [0m fixtures.esp32_driver.transport:transport.py:50 Status_code: 200 | Content: []
+[32mINFO    [0m root:conftest.py:325 清理串口资源: COM5
+[35mDEBUG   [0m root:serial_controller.py:485 缓存已清空
+[32mINFO    [0m root:serial_controller.py:225 当前没有在捕获数据
+[32mINFO    [0m root:conftest.py:202 >>> [Fixture Teardown] ActionEngine 释放
+[32mINFO    [0m root:conftest.py:181 >>> [ESP32_fixture Teardown] 释放设备: 192.168.5.135
+[32mINFO    [0m fixtures.esp32_driver.transport:transport.py:43 Request: GET http://172.16.31.29:8088/unlockESP32 | Params: {'num': 1, 'token': '20260324_163911'} | Body: {}
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:544 http://172.16.31.29:8088 "GET /unlockESP32?num=1&token=20260324_163911 HTTP/1.1" 200 67
+[32mINFO    [0m fixtures.esp32_driver.transport:transport.py:50 Status_code: 200 | Content: {"status":"SUCCESS","message":[{"IP":"192.168.5.135","PORT":8080}]}

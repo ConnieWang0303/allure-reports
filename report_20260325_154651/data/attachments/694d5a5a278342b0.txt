@@ -1,0 +1,77 @@
+[32mINFO    [0m root:configs_loader.py:27 加载基础配置文件: D:\AUTO_TEST\git_data\autotestcase\configs\test_config.yml
+[32mINFO    [0m root:conftest.py:174 >>> [Fixture Setup] 正在初始化 ESP32_client ...
+[32mINFO    [0m root:conftest.py:180 >>> [Fixture Setup] 正在申请 ESP32 设备，token: 20260325_154651 ...
+[32mINFO    [0m fixtures.esp32_driver.transport:transport.py:43 Request: GET http://172.16.31.29:8088/queryIdleESP32List | Params: {'token': '20260325_154651'} | Body: {}
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:241 Starting new HTTP connection (1): 172.16.31.29:8088
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:544 http://172.16.31.29:8088 "GET /queryIdleESP32List?token=20260325_154651 HTTP/1.1" 200 277
+[32mINFO    [0m fixtures.esp32_driver.transport:transport.py:50 Status_code: 200 | Content: {"status":"SUCCESS","message":[{"IP":"192.168.5.133","PORT":8080},{"IP":"192.168.5.135","PORT":8080},{"IP":"192.168.5.131","PORT":8080},{"IP":"192.168.5.136","PORT":8080},{"IP":"192.168.5.137","PORT":8080},{"IP":"192.168.5.130","PORT":8080},{"IP":"192.168.5.138","PORT":8080}]}
+[32mINFO    [0m fixtures.esp32_driver.transport:transport.py:43 Request: GET http://172.16.31.29:8088/lockESP32 | Params: {'num': 1, 'token': '20260325_154651'} | Body: {}
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:544 http://172.16.31.29:8088 "GET /lockESP32?num=1&token=20260325_154651 HTTP/1.1" 200 67
+[32mINFO    [0m fixtures.esp32_driver.transport:transport.py:50 Status_code: 200 | Content: {"status":"SUCCESS","message":[{"IP":"192.168.5.133","PORT":8080}]}
+[32mINFO    [0m fixtures.esp32_driver.manager:manager.py:38 成功分配到 ESP32 设备: 192.168.5.133 | 目标蓝牙: C706_49942
+[32mINFO    [0m fixtures.esp32_driver.transport:transport.py:43 Request: GET http://172.16.31.29:8088/connectBLE | Params: {'ip': '192.168.5.133', 'ble_name': 'C706_49942', 'token': '20260325_154651'} | Body: {}
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:544 http://172.16.31.29:8088 "GET /connectBLE?ip=192.168.5.133&ble_name=C706_49942&token=20260325_154651 HTTP/1.1" 200 48
+[32mINFO    [0m fixtures.esp32_driver.transport:transport.py:50 Status_code: 200 | Content: {"status":"SUCCESS","message":"连接成功！"}
+[32mINFO    [0m root:conftest.py:189 >>> [Fixture Setup] ESP32 (192.168.5.133) 分配并连接成功
+[32mINFO    [0m root:conftest.py:208 >>> [Fixture Setup] 初始化 ActionEngine ...
+[32mINFO    [0m root:conftest.py:246 开始扫描可用串口...
+[35mDEBUG   [0m root:conftest.py:273 串口 COM5: 可用
+[32mINFO    [0m root:conftest.py:295 找到 1 个空闲串口：['COM5']
+[32mINFO    [0m root:conftest.py:301 开始验证码表串口...
+[35mDEBUG   [0m root:serial_controller.py:85 串口 COM5 已打开（只读模式）
+[35mDEBUG   [0m root:serial_controller.py:485 缓存已清空
+[32mINFO    [0m root:serial_controller.py:196 开始在 COM5 捕获数据
+[32mINFO    [0m root:action_engine.py:19 开始执行宏: click_B - 点击B键
+[32mINFO    [0m root:action_engine.py:31 动作: 点击按键 B
+[32mINFO    [0m fixtures.esp32_driver.transport:transport.py:43 Request: GET http://172.16.31.29:8088/btnEvent | Params: {'ip': '192.168.5.133', 'key': 'B', 'event_type': 'CLICK', 'time': 1, 'token': '20260325_154651'} | Body: {}
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:544 http://172.16.31.29:8088 "GET /btnEvent?ip=192.168.5.133&key=B&event_type=CLICK&time=1&token=20260325_154651 HTTP/1.1" 200 58
+[32mINFO    [0m fixtures.esp32_driver.transport:transport.py:50 Status_code: 200 | Content: {"status":"SUCCESS","message":"发送按钮事件成功!"}
+[32mINFO    [0m root:action_engine.py:27 动作: 等待 1 秒
+[32mINFO    [0m root:action_engine.py:57 宏 click_B 执行完毕
+[32mINFO    [0m root:serial_controller.py:215 已停止在COM5捕获数据
+[35mDEBUG   [0m root:serial_controller.py:246 已保存 88 行数据到文件D:\AUTO_TEST\git_data\autotestcase\logs/log_20260325_154651\serial.log
+[32mINFO    [0m root:serial_controller.py:369 log信息匹配计数成功: 期望 1 个，实际 1 个
+[32mINFO    [0m root:conftest.py:321 找到码表串口：COM5
+[35mDEBUG   [0m root:serial_controller.py:485 缓存已清空
+[32mINFO    [0m root:serial_controller.py:225 当前没有在捕获数据
+[32mINFO    [0m root:serial_controller.py:500 串口 COM5 已安全关闭
+[32mINFO    [0m fixtures.esp32_driver.transport:transport.py:43 Request: GET http://172.16.31.29:8088/queryESP32List | Params: {'token': '20260325_154651'} | Body: {}
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:289 Resetting dropped connection: 172.16.31.29
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:544 http://172.16.31.29:8088 "GET /queryESP32List?token=20260325_154651 HTTP/1.1" 200 89
+[32mINFO    [0m fixtures.esp32_driver.transport:transport.py:50 Status_code: 200 | Content: {"status":"SUCCESS","message":[{"IP":"192.168.5.133","PORT":8080,"BLE_IS_CONNECT":true}]}
+[35mDEBUG   [0m root:conftest.py:475 [check_fixture]ESP32 (192.168.5.133) 蓝牙连接正常。
+[32mINFO    [0m root:test_debug.py:32 传感器测试...
+[32mINFO    [0m root:antplus_simulator_controller.py:50 发送传感器指令: {"function": "new", "id": 9724, "data": 2}
+[32mINFO    [0m root:antplus_simulator_controller.py:117 创建speed-9724传感器成功
+[32mINFO    [0m root:test_debug.py:38 这是第0个传感器
+[32mINFO    [0m root:antplus_simulator_controller.py:50 发送传感器指令: {"function": "new", "id": 8953, "data": 0}
+[32mINFO    [0m root:antplus_simulator_controller.py:97 创建heart_rate-8953传感器成功
+[32mINFO    [0m root:test_debug.py:38 这是第1个传感器
+[32mINFO    [0m root:antplus_simulator_controller.py:50 发送传感器指令: {"function": "new", "id": 2484, "data": 1}
+[32mINFO    [0m root:antplus_simulator_controller.py:107 创建power-2484传感器成功
+[32mINFO    [0m root:test_debug.py:38 这是第2个传感器
+[32mINFO    [0m root:antplus_simulator_controller.py:50 发送传感器指令: {"function": "new", "id": 2186, "data": 2}
+[32mINFO    [0m root:antplus_simulator_controller.py:117 创建speed-2186传感器成功
+[32mINFO    [0m root:test_debug.py:38 这是第3个传感器
+[32mINFO    [0m root:antplus_simulator_controller.py:50 发送传感器指令: {"function": "new", "id": 7562, "data": 0}
+[32mINFO    [0m root:antplus_simulator_controller.py:97 创建heart_rate-7562传感器成功
+[32mINFO    [0m root:test_debug.py:38 这是第4个传感器
+[32mINFO    [0m root:antplus_simulator_controller.py:50 发送传感器指令: {"function": "new", "id": 8754, "data": 1}
+[32mINFO    [0m root:antplus_simulator_controller.py:107 创建power-8754传感器成功
+[32mINFO    [0m root:test_debug.py:38 这是第5个传感器
+[32mINFO    [0m root:antplus_simulator_controller.py:50 发送传感器指令: {"function": "update", "id": 9724, "data": 100}
+[32mINFO    [0m root:antplus_simulator_controller.py:144 更新9724传感器数据为：100
+[35mDEBUG   [0m root:serial_controller.py:485 缓存已清空
+[32mINFO    [0m root:conftest.py:385 即将移除6个传感器，传感器：[9724, 8953, 2484, 2186, 7562, 8754]
+[32mINFO    [0m root:antplus_simulator_controller.py:50 发送传感器指令: {"function": "remove", "id": 9724, "data": 0}
+[32mINFO    [0m root:antplus_simulator_controller.py:168 移除传感器9724成功
+[32mINFO    [0m root:antplus_simulator_controller.py:50 发送传感器指令: {"function": "remove", "id": 8953, "data": 0}
+[32mINFO    [0m root:antplus_simulator_controller.py:168 移除传感器8953成功
+[32mINFO    [0m root:antplus_simulator_controller.py:50 发送传感器指令: {"function": "remove", "id": 2484, "data": 0}
+[32mINFO    [0m root:antplus_simulator_controller.py:168 移除传感器2484成功
+[32mINFO    [0m root:antplus_simulator_controller.py:50 发送传感器指令: {"function": "remove", "id": 2186, "data": 0}
+[32mINFO    [0m root:antplus_simulator_controller.py:168 移除传感器2186成功
+[32mINFO    [0m root:antplus_simulator_controller.py:50 发送传感器指令: {"function": "remove", "id": 7562, "data": 0}
+[32mINFO    [0m root:antplus_simulator_controller.py:168 移除传感器7562成功
+[32mINFO    [0m root:antplus_simulator_controller.py:50 发送传感器指令: {"function": "remove", "id": 8754, "data": 0}
+[32mINFO    [0m root:antplus_simulator_controller.py:168 移除传感器8754成功

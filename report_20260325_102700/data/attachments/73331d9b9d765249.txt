@@ -1,0 +1,18 @@
+[32mINFO    [0m fixtures.esp32_driver.transport:transport.py:43 Request: GET http://172.16.31.29:8088/queryESP32List | Params: {'token': '20260325_102700'} | Body: {}
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:544 http://172.16.31.29:8088 "GET /queryESP32List?token=20260325_102700 HTTP/1.1" 200 89
+[32mINFO    [0m fixtures.esp32_driver.transport:transport.py:50 Status_code: 200 | Content: {"status":"SUCCESS","message":[{"IP":"192.168.5.136","PORT":8080,"BLE_IS_CONNECT":true}]}
+[35mDEBUG   [0m root:conftest.py:456 [check_fixture]ESP32 (192.168.5.136) 蓝牙连接正常。
+[32mINFO    [0m root:action_engine.py:19 开始执行宏: get_top_screen - 呼出负一屏
+[32mINFO    [0m root:action_engine.py:43 动作: 屏幕滑动 (120,10) -> (120,200)
+[32mINFO    [0m fixtures.esp32_driver.transport:transport.py:43 Request: GET http://172.16.31.29:8088/touchEvent | Params: {'ip': '192.168.5.136', 'type': 2, 'steps': 10, 'time': 100, 'sx': 120, 'sy': 10, 'ex': 120, 'ey': 200, 'token': '20260325_102700'} | Body: {}
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:544 http://172.16.31.29:8088 "GET /touchEvent?ip=192.168.5.136&type=2&steps=10&time=100&sx=120&sy=10&ex=120&ey=200&token=20260325_102700 HTTP/1.1" 200 58
+[32mINFO    [0m fixtures.esp32_driver.transport:transport.py:50 Status_code: 200 | Content: {"status":"SUCCESS","message":"发送触摸事件成功!"}
+[32mINFO    [0m root:action_engine.py:57 宏 get_top_screen 执行完毕
+[32mINFO    [0m root:conftest.py:324 清理串口资源: COM5
+[35mDEBUG   [0m root:serial_controller.py:485 缓存已清空
+[32mINFO    [0m root:serial_controller.py:225 当前没有在捕获数据
+[32mINFO    [0m root:conftest.py:201 >>> [Fixture Teardown] ActionEngine 释放
+[32mINFO    [0m root:conftest.py:180 >>> [ESP32_fixture Teardown] 释放设备: 192.168.5.136
+[32mINFO    [0m fixtures.esp32_driver.transport:transport.py:43 Request: GET http://172.16.31.29:8088/unlockESP32 | Params: {'num': 1, 'token': '20260325_102700'} | Body: {}
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:544 http://172.16.31.29:8088 "GET /unlockESP32?num=1&token=20260325_102700 HTTP/1.1" 200 67
+[32mINFO    [0m fixtures.esp32_driver.transport:transport.py:50 Status_code: 200 | Content: {"status":"SUCCESS","message":[{"IP":"192.168.5.136","PORT":8080}]}

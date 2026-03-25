@@ -1,0 +1,5 @@
+[32mINFO    [0m fixtures.esp32_driver.transport:transport.py:43 Request: GET http://172.16.31.29:8088/queryESP32List | Params: {'token': '20260325_102700'} | Body: {}
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:289 Resetting dropped connection: 172.16.31.29
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:544 http://172.16.31.29:8088 "GET /queryESP32List?token=20260325_102700 HTTP/1.1" 200 89
+[32mINFO    [0m fixtures.esp32_driver.transport:transport.py:50 Status_code: 200 | Content: {"status":"SUCCESS","message":[{"IP":"192.168.5.136","PORT":8080,"BLE_IS_CONNECT":true}]}
+[35mDEBUG   [0m root:conftest.py:456 [check_fixture]ESP32 (192.168.5.136) 蓝牙连接正常。

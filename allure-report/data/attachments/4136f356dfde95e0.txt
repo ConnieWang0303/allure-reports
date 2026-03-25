@@ -1,0 +1,91 @@
+[32mINFO    [0m root:configs_loader.py:27 加载基础配置文件: D:\AUTO_TEST\git_data\autotestcase\configs\test_config.yml
+[32mINFO    [0m root:conftest.py:156 >>> [Fixture Setup] 正在初始化 ESP32_client ...
+[32mINFO    [0m root:conftest.py:162 >>> [Fixture Setup] 正在申请 ESP32 设备，token: 20260324_163911 ...
+[32mINFO    [0m fixtures.esp32_driver.transport:transport.py:43 Request: GET http://172.16.31.29:8088/queryIdleESP32List | Params: {'token': '20260324_163911'} | Body: {}
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:241 Starting new HTTP connection (1): 172.16.31.29:8088
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:544 http://172.16.31.29:8088 "GET /queryIdleESP32List?token=20260324_163911 HTTP/1.1" 200 312
+[32mINFO    [0m fixtures.esp32_driver.transport:transport.py:50 Status_code: 200 | Content: {"status":"SUCCESS","message":[{"IP":"192.168.5.135","PORT":8080},{"IP":"192.168.5.136","PORT":8080},{"IP":"192.168.5.137","PORT":8080},{"IP":"192.168.5.138","PORT":8080},{"IP":"192.168.5.130","PORT":8080},{"IP":"192.168.5.131","PORT":8080},{"IP":"192.168.5.133","PORT":8080},{"IP":"192.168.5.134","PORT":8080}]}
+[32mINFO    [0m fixtures.esp32_driver.transport:transport.py:43 Request: GET http://172.16.31.29:8088/lockESP32 | Params: {'num': 1, 'token': '20260324_163911'} | Body: {}
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:544 http://172.16.31.29:8088 "GET /lockESP32?num=1&token=20260324_163911 HTTP/1.1" 200 67
+[32mINFO    [0m fixtures.esp32_driver.transport:transport.py:50 Status_code: 200 | Content: {"status":"SUCCESS","message":[{"IP":"192.168.5.135","PORT":8080}]}
+[32mINFO    [0m fixtures.esp32_driver.manager:manager.py:38 成功分配到 ESP32 设备: 192.168.5.135 | 目标蓝牙: C706_49942
+[32mINFO    [0m fixtures.esp32_driver.transport:transport.py:43 Request: GET http://172.16.31.29:8088/connectBLE | Params: {'ip': '192.168.5.135', 'ble_name': 'C706_49942', 'token': '20260324_163911'} | Body: {}
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:544 http://172.16.31.29:8088 "GET /connectBLE?ip=192.168.5.135&ble_name=C706_49942&token=20260324_163911 HTTP/1.1" 200 48
+[32mINFO    [0m fixtures.esp32_driver.transport:transport.py:50 Status_code: 200 | Content: {"status":"SUCCESS","message":"连接成功！"}
+[32mINFO    [0m root:conftest.py:171 >>> [Fixture Setup] ESP32 (192.168.5.135) 分配并连接成功
+[32mINFO    [0m root:conftest.py:190 >>> [Fixture Setup] 初始化 ActionEngine ...
+[32mINFO    [0m root:conftest.py:228 开始扫描可用串口...
+[35mDEBUG   [0m root:conftest.py:255 串口 COM5: 可用
+[32mINFO    [0m root:conftest.py:277 找到 1 个空闲串口：['COM5']
+[32mINFO    [0m root:conftest.py:283 开始验证码表串口...
+[35mDEBUG   [0m root:serial_controller.py:85 串口 COM5 已打开（只读模式）
+[35mDEBUG   [0m root:serial_controller.py:485 缓存已清空
+[32mINFO    [0m root:serial_controller.py:196 开始在 COM5 捕获数据
+[32mINFO    [0m root:action_engine.py:19 开始执行宏: click_B - 点击B键
+[32mINFO    [0m root:action_engine.py:31 动作: 点击按键 B
+[32mINFO    [0m fixtures.esp32_driver.transport:transport.py:43 Request: GET http://172.16.31.29:8088/btnEvent | Params: {'ip': '192.168.5.135', 'key': 'B', 'event_type': 'CLICK', 'time': 1, 'token': '20260324_163911'} | Body: {}
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:544 http://172.16.31.29:8088 "GET /btnEvent?ip=192.168.5.135&key=B&event_type=CLICK&time=1&token=20260324_163911 HTTP/1.1" 200 58
+[32mINFO    [0m fixtures.esp32_driver.transport:transport.py:50 Status_code: 200 | Content: {"status":"SUCCESS","message":"发送按钮事件成功!"}
+[32mINFO    [0m root:action_engine.py:27 动作: 等待 1 秒
+[32mINFO    [0m root:action_engine.py:57 宏 click_B 执行完毕
+[32mINFO    [0m root:serial_controller.py:215 已停止在COM5捕获数据
+[35mDEBUG   [0m root:serial_controller.py:246 已保存 91 行数据到文件D:\AUTO_TEST\git_data\autotestcase\logs/log_20260324_163911\serial.log
+[32mINFO    [0m root:serial_controller.py:369 log信息匹配计数成功: 期望 1 个，实际 1 个
+[32mINFO    [0m root:conftest.py:303 找到码表串口：COM5
+[35mDEBUG   [0m root:serial_controller.py:485 缓存已清空
+[32mINFO    [0m root:serial_controller.py:225 当前没有在捕获数据
+[32mINFO    [0m root:serial_controller.py:500 串口 COM5 已安全关闭
+[32mINFO    [0m root:test_debug.py:32 传感器测试...
+[32mINFO    [0m root:antplus_simulator_controller.py:50 发送传感器指令: {"function": "new", "id": 5864, "data": 2}
+[1m[31mERROR   [0m root:antplus_simulator_controller.py:60 传感器响应错误: {'status': 'error', 'message': 'Failed to start sensor', 'id': 5864}
+[1m[31mERROR   [0m root:antplus_simulator_controller.py:120 创建speed-5864传感器失败
+[32mINFO    [0m root:test_debug.py:38 这是第0个传感器
+[32mINFO    [0m root:antplus_simulator_controller.py:50 发送传感器指令: {"function": "new", "id": 3527, "data": 0}
+[1m[31mERROR   [0m root:antplus_simulator_controller.py:60 传感器响应错误: {'status': 'error', 'message': 'Failed to start sensor', 'id': 3527}
+[1m[31mERROR   [0m root:antplus_simulator_controller.py:100 创建heart_rate-3527传感器失败
+[32mINFO    [0m root:test_debug.py:38 这是第1个传感器
+[32mINFO    [0m root:antplus_simulator_controller.py:50 发送传感器指令: {"function": "new", "id": 8412, "data": 1}
+[1m[31mERROR   [0m root:antplus_simulator_controller.py:60 传感器响应错误: {'status': 'error', 'message': 'Failed to start sensor', 'id': 8412}
+[1m[31mERROR   [0m root:antplus_simulator_controller.py:110 创建power-8412传感器失败
+[32mINFO    [0m root:test_debug.py:38 这是第2个传感器
+[32mINFO    [0m root:antplus_simulator_controller.py:50 发送传感器指令: {"function": "new", "id": 6728, "data": 2}
+[1m[31mERROR   [0m root:antplus_simulator_controller.py:60 传感器响应错误: {'status': 'error', 'message': 'Failed to start sensor', 'id': 6728}
+[1m[31mERROR   [0m root:antplus_simulator_controller.py:120 创建speed-6728传感器失败
+[32mINFO    [0m root:test_debug.py:38 这是第3个传感器
+[32mINFO    [0m root:antplus_simulator_controller.py:50 发送传感器指令: {"function": "new", "id": 9420, "data": 0}
+[1m[31mERROR   [0m root:antplus_simulator_controller.py:60 传感器响应错误: {'status': 'error', 'message': 'Failed to start sensor', 'id': 9420}
+[1m[31mERROR   [0m root:antplus_simulator_controller.py:100 创建heart_rate-9420传感器失败
+[32mINFO    [0m root:test_debug.py:38 这是第4个传感器
+[32mINFO    [0m root:antplus_simulator_controller.py:50 发送传感器指令: {"function": "new", "id": 2161, "data": 1}
+[1m[31mERROR   [0m root:antplus_simulator_controller.py:60 传感器响应错误: {'status': 'error', 'message': 'Failed to start sensor', 'id': 2161}
+[1m[31mERROR   [0m root:antplus_simulator_controller.py:110 创建power-2161传感器失败
+[32mINFO    [0m root:test_debug.py:38 这是第5个传感器
+[32mINFO    [0m root:antplus_simulator_controller.py:50 发送传感器指令: {"function": "new", "id": 5603, "data": 2}
+[1m[31mERROR   [0m root:antplus_simulator_controller.py:60 传感器响应错误: {'status': 'error', 'message': 'Failed to start sensor', 'id': 5603}
+[1m[31mERROR   [0m root:antplus_simulator_controller.py:120 创建speed-5603传感器失败
+[32mINFO    [0m root:test_debug.py:38 这是第6个传感器
+[32mINFO    [0m root:antplus_simulator_controller.py:50 发送传感器指令: {"function": "new", "id": 4342, "data": 0}
+[1m[31mERROR   [0m root:antplus_simulator_controller.py:60 传感器响应错误: {'status': 'error', 'message': 'Failed to start sensor', 'id': 4342}
+[1m[31mERROR   [0m root:antplus_simulator_controller.py:100 创建heart_rate-4342传感器失败
+[32mINFO    [0m root:test_debug.py:38 这是第7个传感器
+[32mINFO    [0m root:antplus_simulator_controller.py:50 发送传感器指令: {"function": "new", "id": 8879, "data": 1}
+[1m[31mERROR   [0m root:antplus_simulator_controller.py:60 传感器响应错误: {'status': 'error', 'message': 'Failed to start sensor', 'id': 8879}
+[1m[31mERROR   [0m root:antplus_simulator_controller.py:110 创建power-8879传感器失败
+[32mINFO    [0m root:test_debug.py:38 这是第8个传感器
+[32mINFO    [0m root:antplus_simulator_controller.py:50 发送传感器指令: {"function": "new", "id": 5939, "data": 2}
+[1m[31mERROR   [0m root:antplus_simulator_controller.py:60 传感器响应错误: {'status': 'error', 'message': 'Failed to start sensor', 'id': 5939}
+[1m[31mERROR   [0m root:antplus_simulator_controller.py:120 创建speed-5939传感器失败
+[32mINFO    [0m root:test_debug.py:38 这是第9个传感器
+[32mINFO    [0m root:antplus_simulator_controller.py:50 发送传感器指令: {"function": "new", "id": 7587, "data": 0}
+[1m[31mERROR   [0m root:antplus_simulator_controller.py:60 传感器响应错误: {'status': 'error', 'message': 'Failed to start sensor', 'id': 7587}
+[1m[31mERROR   [0m root:antplus_simulator_controller.py:100 创建heart_rate-7587传感器失败
+[32mINFO    [0m root:test_debug.py:38 这是第10个传感器
+[32mINFO    [0m root:antplus_simulator_controller.py:50 发送传感器指令: {"function": "new", "id": 1048, "data": 1}
+[1m[31mERROR   [0m root:antplus_simulator_controller.py:60 传感器响应错误: {'status': 'error', 'message': 'Failed to start sensor', 'id': 1048}
+[1m[31mERROR   [0m root:antplus_simulator_controller.py:110 创建power-1048传感器失败
+[32mINFO    [0m root:test_debug.py:38 这是第11个传感器
+[32mINFO    [0m root:antplus_simulator_controller.py:50 发送传感器指令: {"function": "update", "id": null, "data": 100}
+[1m[31mERROR   [0m root:antplus_simulator_controller.py:41 读取传感器响应失败: (109, 'ReadFile', '管道已结束。')
+[1m[31mERROR   [0m root:antplus_simulator_controller.py:147 更新传感器None数据为100失败
+[35mDEBUG   [0m root:serial_controller.py:485 缓存已清空
+[32mINFO    [0m root:conftest.py:367 即将移除0个传感器，传感器：[]

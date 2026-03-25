@@ -1,4 +1,0 @@
-"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
-"调试测试用例，验证测试框架和报告功能是否正常","11627","test_debugcase","cases.smoke","2026-03-25","passed","2026-03-25","","test_debug","",""
-"【冒烟】验证赛段wifi同步正常","110","test_demo","cases","2026-03-25","passed","2026-03-25","TestMedium3","test_demo","",""
-"测试用户登录功能","1","用户登录功能测试","cases.smoke","2026-03-25","passed","2026-03-25","","test_debug","",""

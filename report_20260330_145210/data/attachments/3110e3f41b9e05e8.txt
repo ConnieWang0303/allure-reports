@@ -1,0 +1,9 @@
+[32mINFO    [0m root:conftest.py:209 >>> [Fixture Setup] 初始化 ActionEngine ...
+[32mINFO    [0m root:conftest.py:226 >>> [Fixture Setup] 初始化 VisionChecker ...
+[32mINFO    [0m root:conftest.py:230 >>> [Fixture Teardown] VisionChecker 释放
+[32mINFO    [0m root:conftest.py:221 >>> [Fixture Teardown] ActionEngine 释放
+[32mINFO    [0m root:conftest.py:200 >>> [ESP32_fixture Teardown] 释放设备: 192.168.5.131
+[32mINFO    [0m fixtures.esp32_driver.transport:transport.py:44 Request: GET http://172.16.31.29:8088/unlockESP32 | Params: {'num': 1, 'token': '20260330_145210'} | Body: {}
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:289 Resetting dropped connection: 172.16.31.29
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:544 http://172.16.31.29:8088 "GET /unlockESP32?num=1&token=20260330_145210 HTTP/1.1" 200 67
+[32mINFO    [0m fixtures.esp32_driver.transport:transport.py:51 Status_code: 200 | Content: {"status":"SUCCESS","message":[{"IP":"192.168.5.131","PORT":8080}]}

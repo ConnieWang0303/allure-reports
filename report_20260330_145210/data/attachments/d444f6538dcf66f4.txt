@@ -1,0 +1,47 @@
+[32mINFO    [0m root:configs_loader.py:27 加载基础配置文件: D:\AUTO_TEST\git_data\autotestcase\configs\test_config.yml
+[32mINFO    [0m root:conftest.py:175 >>> [Fixture Setup] 正在初始化 ESP32_client ...
+[32mINFO    [0m root:conftest.py:181 >>> [Fixture Setup] 正在申请 ESP32 设备，token: 20260330_145210 ...
+[32mINFO    [0m fixtures.esp32_driver.transport:transport.py:44 Request: GET http://172.16.31.29:8088/queryIdleESP32List | Params: {'token': '20260330_145210'} | Body: {}
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:241 Starting new HTTP connection (1): 172.16.31.29:8088
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:544 http://172.16.31.29:8088 "GET /queryIdleESP32List?token=20260330_145210 HTTP/1.1" 200 277
+[32mINFO    [0m fixtures.esp32_driver.transport:transport.py:51 Status_code: 200 | Content: {"status":"SUCCESS","message":[{"IP":"192.168.5.131","PORT":8080},{"IP":"192.168.5.134","PORT":8080},{"IP":"192.168.5.135","PORT":8080},{"IP":"192.168.5.138","PORT":8080},{"IP":"192.168.5.139","PORT":8080},{"IP":"192.168.5.130","PORT":8080},{"IP":"192.168.5.137","PORT":8080}]}
+[32mINFO    [0m fixtures.esp32_driver.transport:transport.py:44 Request: GET http://172.16.31.29:8088/lockESP32 | Params: {'num': 1, 'token': '20260330_145210'} | Body: {}
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:544 http://172.16.31.29:8088 "GET /lockESP32?num=1&token=20260330_145210 HTTP/1.1" 200 67
+[32mINFO    [0m fixtures.esp32_driver.transport:transport.py:51 Status_code: 200 | Content: {"status":"SUCCESS","message":[{"IP":"192.168.5.131","PORT":8080}]}
+[32mINFO    [0m fixtures.esp32_driver.manager:manager.py:38 成功分配到 ESP32 设备: 192.168.5.131 | 目标蓝牙: C706_50722
+[32mINFO    [0m fixtures.esp32_driver.transport:transport.py:44 Request: GET http://172.16.31.29:8088/connectBLE | Params: {'ip': '192.168.5.131', 'ble_name': 'C706_50722', 'token': '20260330_145210'} | Body: {}
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:544 http://172.16.31.29:8088 "GET /connectBLE?ip=192.168.5.131&ble_name=C706_50722&token=20260330_145210 HTTP/1.1" 200 48
+[32mINFO    [0m fixtures.esp32_driver.transport:transport.py:51 Status_code: 200 | Content: {"status":"SUCCESS","message":"连接成功！"}
+[32mINFO    [0m root:conftest.py:190 >>> [Fixture Setup] ESP32 (192.168.5.131) 分配并连接成功
+[32mINFO    [0m root:conftest.py:256 开始扫描可用串口...
+[35mDEBUG   [0m root:conftest.py:283 串口 COM5: 可用
+[32mINFO    [0m root:conftest.py:305 找到 1 个空闲串口：['COM5']
+[32mINFO    [0m root:conftest.py:311 开始验证码表串口...
+[35mDEBUG   [0m root:serial_controller.py:85 串口 COM5 已打开（只读模式）
+[35mDEBUG   [0m root:serial_controller.py:485 缓存已清空
+[32mINFO    [0m root:serial_controller.py:196 开始在 COM5 捕获数据
+[32mINFO    [0m fixtures.esp32_driver.transport:transport.py:44 Request: GET http://172.16.31.29:8088/btnEvent | Params: {'ip': '192.168.5.131', 'key': 'B', 'event_type': 'CLICK', 'time': 1, 'token': '20260330_145210'} | Body: {}
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:289 Resetting dropped connection: 172.16.31.29
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:544 http://172.16.31.29:8088 "GET /btnEvent?ip=192.168.5.131&key=B&event_type=CLICK&time=1&token=20260330_145210 HTTP/1.1" 200 58
+[32mINFO    [0m fixtures.esp32_driver.transport:transport.py:51 Status_code: 200 | Content: {"status":"SUCCESS","message":"发送按钮事件成功!"}
+[32mINFO    [0m root:serial_controller.py:215 已停止在COM5捕获数据
+[35mDEBUG   [0m root:serial_controller.py:246 已保存 4 行数据到文件D:\AUTO_TEST\git_data\autotestcase\logs/log_20260330_145210\serial.log
+[1m[31mERROR   [0m root:serial_controller.py:371 log信息匹配计数不成功: 期望 1 个，实际 0 个
+[32mINFO    [0m root:serial_controller.py:253 ============================================================
+[32mINFO    [0m root:serial_controller.py:254 捕获的串口数据:
+[32mINFO    [0m root:serial_controller.py:255 ============================================================
+[32mINFO    [0m root:serial_controller.py:262 数据长度: 4 字符
+[32mINFO    [0m root:serial_controller.py:263 捕获时间: 2026-03-30 14:52:42
+[32mINFO    [0m root:serial_controller.py:264 串口: COM5 (波特率: 115200)
+[32mINFO    [0m root:serial_controller.py:265 ------------------------------------------------------------
+[32mINFO    [0m root:serial_controller.py:273 [   1] [0;32mI (272137231) C706: Recv GUI event, src:4 type:183[0m
+[32mINFO    [0m root:serial_controller.py:273 [   2] [0;32mI (272142236) C706: Recv GUI event, src:4 type:183[0m
+[32mINFO    [0m root:serial_controller.py:273 [   3] [0;33mW (272145557) C706: kaka bat value = 100[0m
+[32mINFO    [0m root:serial_controller.py:273 [   4] [0;32mI (272147238) C706: Recv GUI event, src:4 type:183[0m
+[32mINFO    [0m root:serial_controller.py:276 ------------------------------------------------------------
+[32mINFO    [0m root:serial_controller.py:277 总计: 4 行有效数据
+[32mINFO    [0m root:serial_controller.py:278 ============================================================
+[35mDEBUG   [0m root:conftest.py:335 COM5 未收到响应，不是码表串口
+[35mDEBUG   [0m root:serial_controller.py:485 缓存已清空
+[32mINFO    [0m root:serial_controller.py:225 当前没有在捕获数据
+[32mINFO    [0m root:serial_controller.py:500 串口 COM5 已安全关闭

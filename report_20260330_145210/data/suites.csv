@@ -1,0 +1,3 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"【冒烟】验证自动记圈、自动暂停功能正常","0","test_TC_C706_3917","cases","2026-03-30","broken","2026-03-30","TestMedium3","test_demo","",""
+"调试测试用例，验证测试框架和报告功能是否正常","0","test_debugcase","cases.smoke","2026-03-30","broken","2026-03-30","","test_debug","",""

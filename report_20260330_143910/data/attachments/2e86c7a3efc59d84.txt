@@ -1,0 +1,1 @@
+完整配置: {'bc_info': {'port': 'COM93', 'ble_name': 'C706_50722'}, 'hardware_info': [{'model': 'C706', 'screen_type': '320*480'}, {'model': 'C606P', 'screen_type': '240*320'}]}
